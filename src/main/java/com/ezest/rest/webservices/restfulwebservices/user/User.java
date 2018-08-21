@@ -4,11 +4,16 @@ import java.util.Date;
 
 import javax.validation.constraints.Size;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
+@ApiModel(description="All details about user")
 public class User {
 
 	private Integer id;
 	@Size(min=3,max=9,message="Name should be 3 character long or greater")
 	private String name;
+	@ApiModelProperty(notes="Birthdate cannot be in past")
 	private Date birthDate;
 	public User(Integer id, String name, Date birthDate) {
 		super();
