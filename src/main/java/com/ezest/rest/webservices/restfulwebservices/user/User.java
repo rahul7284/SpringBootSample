@@ -2,14 +2,19 @@ package com.ezest.rest.webservices.restfulwebservices.user;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.validation.constraints.Size;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 @ApiModel(description="All details about user")
+@Entity
 public class User {
-
+	@Id
+	@GeneratedValue
 	private Integer id;
 	@Size(min=3,max=9,message="Name should be 3 character long or greater")
 	private String name;

@@ -1,7 +1,9 @@
 package com.ezest.rest.webservices.restfulwebservices.filter;
 
+import com.fasterxml.jackson.annotation.JsonFilter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-
+//dynamic filter
+@JsonFilter("SomeBeanFilter")
 public class SomeBean {
 	public SomeBean(String field1, String field2, String field3) {
 		super();
@@ -11,7 +13,7 @@ public class SomeBean {
 	}
 	private String field1;
 	private String field2;
-	@JsonIgnore
+	/*@JsonIgnore  -- static filtering*/
 	private String field3;
 	public String getField1() {
 		return field1;
